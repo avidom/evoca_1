@@ -1,1 +1,160 @@
-<!DOCTYPE html><html>	<head>		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>		<meta charset="UTF-8">				<title>Лидское Пшеничное пиво</title>				<meta name="description" content="">		<meta name="keywords" content="">				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">		<!-- <link rel="shortcut icon" href="/favicon.ico"> -->		<meta property="og:title"		content="Лидское Пшеничное пиво">		<meta property="og:url"			content="http://pshenichnoe.lidskoe.by">		<meta property="og:description"	content="Познакомьтесь с особенностями настоящего пшеничного пива">		<meta property="og:image"		content="http://pshenichnoe.lidskoe.by/share.png">				<link href="css/normalize.css" rel="stylesheet">		<link href="css/bootstrap.min.css" rel="stylesheet">		<link href="css/style.css?v=2" rel="stylesheet">				<link href="css/font-lightcase.css" rel="stylesheet">		<link href="css/lightcase.css" rel="stylesheet">					<!--[if IE]>			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>		<![endif]-->	</head>		<body>										<div id="content_main">			<img src="images/logo.png" id="logo" />			<div id="newDiv" class="logoP" onclick="startSharing()" style="background-color:red; width:100px;">				clickMe			</div>			<div class="lightbox">				<img src="" class="image"/>			</div>		</div>					<div id="popup_share">			<div id="popupBg"></div>			<div id="popup">				<div class="content_block">				<img src="" class="image"/>					<h4>Расскажите  друзьям</h4>					<div id="btn_f" class="btn_share" onclick="Share.facebook()"></div>					<div id="btn_vk" class="btn_share" onclick="Share.vkontakte()"></div>				</div>								<div id="popupClose" class="btn"></div>			</div>		</div>							<!-- script -->				<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>		<script type="text/javascript" src="js/jquery.events.touch.js"></script>			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>			<script type="text/javascript" src="js/TweenMax.min.js"></script>			<script type="text/javascript" src="js/EasePack.min.js"></script>			<script type="text/javascript" src="js/CSSPlugin.min.js"></script>					<script type="text/javascript" src="js/lightcase.min.js"></script>				<script type="text/javascript">													// Progress			// var idImLoad=0;			// var aImLoad=[			// 	"images/bg.jpg",			// 	"images/logo.png",			// 	//"images/popup_bg.jpg",			// ];																	function startSharing(){					console.log(12121212121);					jQuery('#popup_share').addClass('open');				}			//- Popup				jQuery( "#popupClose" ).on('click', function(){					jQuery('#popup_share').removeClass('open');								});					jQuery( "#popupBg" ).on('click', function(){					jQuery('#popup_share').removeClass('open');								});												// Share			var shareTitle='Лидское Пшеничное пиво';			var shareUrl='http://pshenichnoe.lidskoe.by/';					var shareDesc='Познакомьтесь с особенностями настоящего пшеничного пива';			var shareImage='http://vitamineral.by/images/share_0_0.png';			//var shareImage='images/popup_bg.jpg';			//var shareImage = "";			$('.logoP').on('click', function(){				html2canvas($(".logoP"), {					onrendered: function(canvas) {						console.log(1000);						//shareImage = canvas.toDataURL('image/jpeg', 0.85);						//$('.image').attr('src', shareImage).fadeIn(200);						//$('.image').attr('src', shareImage).fadeIn(200);						}					});				});			Share = {				vkontakte: function(num) {					url  = 'http://vkontakte.ru/share.php?';					url += 'url='          + encodeURIComponent(shareUrl);					url += '&title='       + encodeURIComponent(shareTitle);					url += '&description=' + encodeURIComponent(shareDesc);					url += '&image='       + encodeURIComponent(shareImage);					url += '&noparse=true';					Share.popup(url);				},				facebook: function(num) {					url  = 'https://www.facebook.com/sharer/sharer.php?s=100';					url += '&p[title]='     + encodeURIComponent(shareTitle);					url += '&p[summary]='   + encodeURIComponent(shareDesc);					url += '&p[url]='       + encodeURIComponent(shareUrl);					url += '&p[images][0]=' + encodeURIComponent(shareImage);					Share.popup(url);				},				twitter: function(num) {					url  = 'http://twitter.com/share?';					url += 'text='      + encodeURIComponent(shareDescTw);					url += '&url='      + encodeURIComponent(shareUrl);					url += '&counturl=' + encodeURIComponent(shareUrl);					Share.popup(url);				},				popup: function(url) {					window.open(url,'','toolbar=0, status=0, width=626, height=436');				}			};		</script>			</body></html>	
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta charset="UTF-8">
+		
+		<title>Лидское Пшеничное пиво</title>
+		
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+		<!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+
+		<meta property="og:title"		content="Лидское Пшеничное пиво">
+		<meta property="og:url"			content="http://pshenichnoe.lidskoe.by">
+		<meta property="og:description"	content="Познакомьтесь с особенностями настоящего пшеничного пива">
+		<meta property="og:image"		content="http://pshenichnoe.lidskoe.by/share.png">
+		
+		<link href="css/normalize.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css?v=2" rel="stylesheet">
+		
+		<link href="css/font-lightcase.css" rel="stylesheet">
+		<link href="css/lightcase.css" rel="stylesheet">	
+		
+		<!--[if IE]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>	
+	<body>
+		
+		
+
+		
+		
+		<div id="content_main">
+			<img src="images/logo.png" id="logo" />
+			<div id="newDiv" class="logoP" onclick="startSharing()" style="background-color:red; width:100px;">
+				clickMe
+			</div>
+			<div class="lightbox">
+				<img src="" class="image"/>
+			</div>
+		</div>
+
+		
+	
+
+
+		<div id="popup_share">
+			<div id="popupBg"></div>
+			<div id="popup">
+				<div class="content_block">
+				<img src="" class="image"/>
+					<h4>Расскажите  друзьям</h4>
+					<div id="btn_f" class="btn_share" onclick="Share.facebook()"></div>
+					<div id="btn_vk" class="btn_share" onclick="Share.vkontakte()"></div>
+				</div>
+				
+				<div id="popupClose" class="btn"></div>
+			</div>
+		</div>
+		
+		
+	
+		<!-- script -->		
+		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.events.touch.js"></script>	
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>	
+		<script type="text/javascript" src="js/TweenMax.min.js"></script>	
+		<script type="text/javascript" src="js/EasePack.min.js"></script>	
+		<script type="text/javascript" src="js/CSSPlugin.min.js"></script>	
+		
+		<script type="text/javascript" src="js/lightcase.min.js"></script>
+		
+		<script type="text/javascript">				
+			
+			
+			// Progress
+			// var idImLoad=0;
+			// var aImLoad=[
+			// 	"images/bg.jpg",
+			// 	"images/logo.png",
+			// 	//"images/popup_bg.jpg",
+			// ];
+			
+				
+			
+			
+				function startSharing(){
+					console.log(12121212121);
+					jQuery('#popup_share').addClass('open');
+				}
+
+			//- Popup
+				jQuery( "#popupClose" ).on('click', function(){
+					jQuery('#popup_share').removeClass('open');				
+				});	
+				jQuery( "#popupBg" ).on('click', function(){
+					jQuery('#popup_share').removeClass('open');				
+				});
+			
+			
+			
+			// Share
+			var shareTitle='Лидское Пшеничное пиво';
+			var shareUrl='http://pshenichnoe.lidskoe.by/';		
+			var shareDesc='Познакомьтесь с особенностями настоящего пшеничного пива';
+			var shareImage='http://koronet.by/sites/all/themes/koronet/logo.png';
+			//var shareImage='images/popup_bg.jpg';
+			//var shareImage = "";
+			$('.logoP').on('click', function(){
+				html2canvas($(".logoP"), {
+					onrendered: function(canvas) {
+						console.log(1000);
+						//shareImage = canvas.toDataURL('image/jpeg', 0.85);
+						//$('.image').attr('src', shareImage).fadeIn(200);
+						//$('.image').attr('src', shareImage).fadeIn(200);
+						}
+					});
+				});
+			Share = {
+
+
+
+
+				vkontakte: function(num) {
+					url  = 'http://vkontakte.ru/share.php?';
+					url += 'url='          + encodeURIComponent(shareUrl);
+					url += '&title='       + encodeURIComponent(shareTitle);
+					url += '&description=' + encodeURIComponent(shareDesc);
+					url += '&image='       + encodeURIComponent(shareImage);
+					url += '&noparse=true';
+					Share.popup(url);
+				},
+				facebook: function(num) {
+					url  = 'https://www.facebook.com/sharer/sharer.php?s=100';
+					url += '&p[title]='     + encodeURIComponent(shareTitle);
+					url += '&p[summary]='   + encodeURIComponent(shareDesc);
+					url += '&p[url]='       + encodeURIComponent(shareUrl);
+					url += '&p[images][0]=' + encodeURIComponent(shareImage);
+					Share.popup(url);
+				},
+				twitter: function(num) {
+					url  = 'http://twitter.com/share?';
+					url += 'text='      + encodeURIComponent(shareDescTw);
+					url += '&url='      + encodeURIComponent(shareUrl);
+					url += '&counturl=' + encodeURIComponent(shareUrl);
+					Share.popup(url);
+				},
+				popup: function(url) {
+					window.open(url,'','toolbar=0, status=0, width=626, height=436');
+				}
+			};
+		</script>		
+	</body>
+</html>	
